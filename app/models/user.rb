@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :activities
 
+  before_create :ensure_gravatar_hash
   before_create :mark_registration_status_depending_on_app_settings
 
   after_create :ensure_at_least_one_admin
