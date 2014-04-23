@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-  before_filter :authenticate_user!
 
   def index
     # TODO can be divided into two actions

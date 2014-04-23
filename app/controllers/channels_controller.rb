@@ -1,7 +1,5 @@
 class ChannelsController < ApplicationController
-  before_filter :authenticate_user!
   before_filter :find_channel_by_name, :only => :show
-  load_and_authorize_resource
   before_filter :set_channel_owner, only: :create
 
   def index
@@ -9,7 +7,7 @@ class ChannelsController < ApplicationController
     nested_channel_data = []
 
     # TODO this can be shortened
-    @channels.each do |channel|
+    Channel.all.each do |channel|
       activities = []
       more_activities = (channel.activities.count > Kandan::Config.options[:per_page])
       channel.activities.order('id DESC').includes(:user).page.each do |activity|

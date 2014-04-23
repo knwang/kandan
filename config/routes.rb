@@ -1,9 +1,5 @@
 Kandan::Application.routes.draw do
 
-  devise_for :users, :controllers => {
-    :sessions => "sessions"
-  }
-
   root :to => "main#index"
 
   get '/search' => "main#search"
@@ -30,6 +26,4 @@ Kandan::Application.routes.draw do
   # Pages Controller
   get "/approval", :to => "pages#approval"
   get "/suspended", :to => "pages#suspended"
-  get "/about", :to =>"pages#about"
-
 end

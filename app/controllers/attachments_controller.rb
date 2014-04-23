@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 class AttachmentsController < ApplicationController
 
-  before_filter :authenticate_user!
   protect_from_forgery :except => :create
 
   # GET /attachments

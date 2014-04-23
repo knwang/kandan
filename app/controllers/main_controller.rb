@@ -1,5 +1,4 @@
 class MainController < ApplicationController
-  before_filter :authenticate_user!
   
   def index
     # TODO this isn't being used right now. use this for faster app

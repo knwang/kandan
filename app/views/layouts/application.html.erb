@@ -9,11 +9,9 @@
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= yield :head %>
-  <%- if user_signed_in? %>
-    <%= javascript_tag do %>
-      $.data(document, "current-user", <%= json_escape(current_user_data.to_json.html_safe) %>);
-    <% end %>
-  <%- end %>
+  <%= javascript_tag do %>
+    $.data(document, "current-user", <%= json_escape(current_user_data.to_json.html_safe) %>);
+  <% end %>
 </head>
 <body id="kandan" data-kandan-config="<%= Kandan::Config.to_json %>">
   <% if content_for? :sidebar %>
@@ -22,7 +20,6 @@
     </aside>
   <% end %>
   <article class="main-area">
-    <%= render "layouts/header" %>
     <%= render "layouts/messages" %>
     <%= yield %>
   </article>

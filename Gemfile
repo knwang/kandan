@@ -9,10 +9,6 @@ gem 'pg'
 # Uncomment next line when using MySQL database
 #gem 'mysql2'
 
-# Auth gems
-gem 'devise'
-gem 'cancan'
-
 # Server/transport gems
 gem 'thin'
 gem 'faye'

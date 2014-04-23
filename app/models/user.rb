@@ -8,19 +8,11 @@ class User < ActiveRecord::Base
   enumerize :registration_status, in: [:active, :suspended, :waiting_approval], :default => :waiting_approval
 
   has_many :activities
-  before_save :ensure_gravatar_hash
-  before_save :ensure_authentication_token
 
   before_create :mark_registration_status_depending_on_app_settings
 
   after_create :ensure_at_least_one_admin
   after_destroy :ensure_at_least_one_admin
-  
-  validates :username, :presence => true, :uniqueness => true
-  validate :check_external_avatar
-  
-  # Kandan.devise_modules is defined in config/initializers/kandan.rb
-  devise devise *Kandan.devise_modules
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :id, :username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :locale, :gravatar_hash, :registration_status, :avatar_url
