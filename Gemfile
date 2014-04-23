@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
 # Core gems
 gem 'rails', '3.2.16'
 
