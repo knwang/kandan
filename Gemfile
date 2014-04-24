@@ -41,6 +41,7 @@ end
 
 group :production do
   gem 'kandan-count'
+  gem 'rails_12factor'
 end
 
 group :development do
