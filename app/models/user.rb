@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   after_destroy :ensure_at_least_one_admin
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :id, :username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :locale, :gravatar_hash, :registration_status, :avatar_url
+  attr_accessible :id, :username, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :locale, :gravatar_hash, :registration_status, :avatar_url, :full_name, :authentication_token, :admin
 
   def username
     full_name
