@@ -13,6 +13,7 @@ Kandan::Application.routes.draw do
 
   get "/active_users" => "apis#active_users"
   get "/me" => "apis#me"
+  post "/add_user" => "apis#add_user"
 
   get "/users/edit" =>"main#users_edit"
 
