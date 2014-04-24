@@ -13,7 +13,7 @@ class ApisController < ApplicationController
   end
 
   def add_user
-    User.create!(email: params[:email], full_name: params[:full_name], authentication_token: params[:authentication_token], admin: false)
+    User.create!(email: params[:email], full_name: params[:full_name], authentication_token: params[:authentication_token], is_admin: false)
     head(200)
   end
 end
